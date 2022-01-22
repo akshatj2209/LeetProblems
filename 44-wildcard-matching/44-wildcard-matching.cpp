@@ -2,21 +2,17 @@ class Solution {
    public:
       bool isMatch(string s, string p) {
          bool dp[s.length()+1][p.length()+1];
-          memset(dp, false, sizeof(dp));
+         memset(dp, false, sizeof(dp));
          int i, j;
          if (p.length() == 0 && s.length() != 0) {
             return false;
          }
          dp[0][0] = true;
-         bool dec = true;
-         for (i = 1; i <= s.length(); i++) {
-            dp[i][0] = false;
-         }
          for (i = 1; i <= p.length(); i++) {
             if (p[i - 1] != '*') {
-               dec = false;
+                break;
             }
-            dp[0][i] = dec;
+            dp[0][i] = true;
          }
          for (i = 1; i <= s.length(); i++) {
             for (j = 1; j <= p.length(); j++) {
