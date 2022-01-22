@@ -1,7 +1,8 @@
 class Solution {
    public:
       bool isMatch(string s, string p) {
-         vector < vector < bool >> dp(s.length() + 1, vector < bool > (p.length() + 1, false));
+         bool dp[s.length()+1][p.length()+1];
+          memset(dp, false, sizeof(dp));
          int i, j;
          if (p.length() == 0 && s.length() != 0) {
             return false;
