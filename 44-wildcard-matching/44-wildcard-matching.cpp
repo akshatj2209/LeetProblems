@@ -1,21 +1,22 @@
 class Solution {
    public:
       bool isMatch(string s, string p) {
-         bool dp[s.length()+1][p.length()+1];
+          int m=s.length(),n=p.length();
+          bool dp[m+1][n+1];
          memset(dp, false, sizeof(dp));
          int i, j;
-         if (p.length() == 0 && s.length() != 0) {
+         if (n == 0 && m != 0) {
             return false;
          }
          dp[0][0] = true;
-         for (i = 1; i <= p.length(); i++) {
+         for (i = 1; i <= n; i++) {
             if (p[i - 1] != '*') {
                 break;
             }
             dp[0][i] = true;
          }
-         for (i = 1; i <= s.length(); i++) {
-            for (j = 1; j <= p.length(); j++) {
+         for (i = 1; i <= m; i++) {
+            for (j = 1; j <= n; j++) {
                if (s[i - 1] == p[j - 1] || p[j - 1] == '?') {
                   dp[i][j] = dp[i - 1][j - 1];
                }
@@ -24,6 +25,6 @@ class Solution {
                }
             }
          }
-         return dp[s.length()][p.length()];
+         return dp[m][n];
       }
 };
