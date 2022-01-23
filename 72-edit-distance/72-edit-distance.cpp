@@ -24,7 +24,7 @@ int recur(string word1, string word2, int i, int j,vector<vector<int>> &memo){
 class Solution {
 public:
     int minDistance(string word1, string word2) {
-        vector<vector<int>> dp(word1.length()+1, vector<int>(word2.length()+1,0));
+        int dp[word1.length()+1][word2.length()+1];
         int m=word1.length();
         int n=word2.length();
         int i,j;
