@@ -1,5 +1,4 @@
 int recur(string word1, string word2, int i, int j,vector<vector<int>> &memo){
-    cout<<i<<" "<<j<<endl;
     if(i==word1.length()){
         return word2.length()-j;
     }
