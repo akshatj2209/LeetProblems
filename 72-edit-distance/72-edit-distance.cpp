@@ -1,11 +1,14 @@
 int recur(string word1, string word2, int i, int j,vector<vector<int>> &memo){
+    if(memo[i][j]!=-1){
+        return memo[i][j];
+    }
+    
     if(i==word1.length()){
-        return word2.length()-j;
+        memo[i][j]=word2.length()-j;
+        return memo[i][j];
     }
     if(j==word2.length()){
-        return word1.length()-i;
-    }
-    if(memo[i][j]!=-1){
+        memo[i][j]=word1.length()-i;
         return memo[i][j];
     }
     
