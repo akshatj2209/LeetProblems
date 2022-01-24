@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    int rec(int l, int r,int dp[][21]) 
+    int rec(int l, int r,int dp[][20]) 
     {
         if (l > r) return 0;
         if(dp[l][r]!=-1){
@@ -30,7 +30,7 @@ public:
         return dp[l][r];
     }
     int numTrees(int n) {
-        int dp[21][21];
+        int dp[20][20];
         memset(dp,-1,sizeof(dp));        
         return rec(1,n,dp);
     }
