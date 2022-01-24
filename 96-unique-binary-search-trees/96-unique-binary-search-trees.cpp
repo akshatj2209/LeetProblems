@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    int rec(int l, int r,vector<vector<int>> &dp) 
+    int rec(int l, int r,int dp[][21]) 
     {
         if (l > r) return 0;
         if(dp[l][r]!=-1){
@@ -30,8 +30,8 @@ public:
         return dp[l][r];
     }
     int numTrees(int n) {
-        vector<vector<int>> dp(n+1,vector<int>(n+1,-1));
-        
+        int dp[21][21];
+        memset(dp,-1,sizeof(dp));        
         return rec(1,n,dp);
     }
 };
