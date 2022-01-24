@@ -24,6 +24,50 @@ public:
     }
     bool isInterleave(string s1, string s2, string s3) {
         vector<vector<int>> memo(s1.length()+1,vector<int>(s2.length()+1,2));
-        return recur(s1,s2,s3,0,0,memo);   
+        vector<vector<bool>> dp(s1.length()+1,vector<bool>(s2.length()+1,false));
+        int m=s1.length(), n=s2.length();
+        int i,j;
+        if(m+n!=s3.length()){
+            return false;
+        }
+        for(i=0;i<=m;i++){
+            for(j=0;j<=n;j++){
+                if(i==0 && j==0){
+                    dp[i][j]=true;
+                }
+                else if(i==0){
+                    if(s2[j-1]==s3[j-1]){
+                        dp[i][j]=dp[i][j-1];
+                    }
+                    else{
+                        dp[i][j]=false;
+                    }
+                }
+                else if(j==0){
+                    if(s1[i-1]==s3[i-1]){
+                        dp[i][j]=dp[i-1][j];
+                    }
+                    else{
+                        dp[i][j]=false;
+                    }
+                }
+                else{
+                    if(s1[i-1]==s3[i+j-1] && s2[j-1]==s3[i+j-1]){
+                        dp[i][j]=dp[i-1][j] || dp[i][j-1];
+                    }
+                    else if(s2[j-1]==s3[i+j-1]){
+                        dp[i][j]=dp[i][j-1];
+                    }
+                    else if(s1[i-1]==s3[i+j-1]){
+                        dp[i][j]=dp[i-1][j];
+                    }
+                    else{
+                        dp[i][j]=false;
+                    }
+                    
+                }
+            }
+        }
+        return dp[m][n];   
     }
 };
