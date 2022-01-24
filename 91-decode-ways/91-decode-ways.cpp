@@ -3,27 +3,30 @@ class Solution {
         int numDecodings(string s) {
             int i;
             int n=s.length();
-            int dp[n+1];
-            dp[n]=0;
+            int cur;
+            int count1=0;
+            int count2=0;
             for(i=n;i>0;i--){
                 if(s[i-1]=='0'){
-                    dp[i-1]=0;
+                    cur=0;
                 }
                 else if(i==n){
-                    dp[i-1]=1;
+                    cur=1;
                 }
                 else if(i==n-1 && stoi(s.substr(i-1, 2)) <= 26){
-                    dp[i-1]=1+dp[i];
+                    cur=1+count2;
                 }
                 else if(stoi(s.substr(i-1, 2)) <= 26){
-                    dp[i-1]=dp[i]+dp[i+1];
+                    cur=count2+count1;
                 }
                 else{
-                    dp[i-1]=dp[i];
+                    cur=count2;
                 }
+                count1=count2;
+                count2=cur;
             }
 
-            return dp[0];
+            return count2;
         }
         
 };
