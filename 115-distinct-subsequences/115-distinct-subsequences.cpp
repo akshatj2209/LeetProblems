@@ -1,7 +1,7 @@
 class Solution {
 public:
     int numDistinct(string s, string t) {
-        unsigned long dp [s.length()+1][t.length()+1];
+        unsigned int dp [s.length()+1][t.length()+1];
         int m=s.length();
         int n=t.length();
         int i,j;
