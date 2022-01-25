@@ -46,7 +46,6 @@ public:
             }
             max1=max(max1,max_so_far+dp[i+1]);
         }
-        max1=max(max1,dp[0]);
         
         return max1;
         
