@@ -8,9 +8,7 @@ public:
         }
         prices[0]=0;
         int max_so_far=0;
-        int max_ending_here=0;
-        for(i=0;i<n;i++){
-            max_ending_here+=prices[i];
+        for(i=1;i<n;i++){
             if(prices[i]>0){
                 max_so_far+=prices[i];
             }
