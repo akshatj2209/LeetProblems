@@ -5,7 +5,7 @@ public:
         memset(dp,false,sizeof(dp));
         dp[0]=true;
         for(int i=0;i<s.length();i++){
-            for(int j=0;j<=i;j++){
+            for(int j=i;j>=0;j--){
                 if(dp[j] && find(wordDict.begin(), wordDict.end(),s.substr(j,i-j+1)) != wordDict.end()){
                     dp[i+1]=  dp[j];
                     break;
