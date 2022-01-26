@@ -8,6 +8,7 @@ public:
             for(int j=0;j<=i;j++){
                 if(dp[j] && find(wordDict.begin(), wordDict.end(),s.substr(j,i-j+1)) != wordDict.end()){
                     dp[i+1]=  dp[j];
+                    break;
                 }
             }
         }
