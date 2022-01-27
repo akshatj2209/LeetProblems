@@ -1,24 +1,7 @@
 class Solution {
 public:
-    int robe(vector<int>& nums, int i, int n) {
-        int dp[n+2];
-        if(n==1){
-            return nums[0];
-        }
-        if(i+1==n-1){
-            return nums[i+1];
-        }
-        dp[i]=0;
-        dp[i+1]=nums[0];
-        dp[i+2]=nums[1];
-        for(i=3;i<=n;i++){
-            dp[i]=nums[i-1] + max(dp[i-2],dp[i-3]);
-        }
-        return max(dp[n],dp[n-1]);
-        
-    }
-    int rob(vector<int>& nums) {
-        vector<int> arr=nums;
+    int rob(vector<int>& arr) {
+
     long long int n=arr.size();
         if(n==1){
             return arr[0];
