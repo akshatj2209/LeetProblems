@@ -1,7 +1,6 @@
 class Solution {
 public:
     void recur(string s, vector<string>& wordDict, vector<string>& ans, int i, string comp){
-        cout<<i<<" "<<comp<<endl;
         if(i==s.length()){
             comp.pop_back();
             ans.push_back(comp);
