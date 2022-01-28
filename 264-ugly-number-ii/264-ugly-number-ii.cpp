@@ -9,7 +9,6 @@ public:
         int i5=0;
         dp[0]=1;
         for(int i=1; i<n; i++) {    
-		//Sort the ugly numbers. Since, we are multiplying with 2, 3 and 5, the resulting numbers will be guranted ugly numbers.
             int n2=dp[i2]*2;
             int n3=dp[i3]*3;
             int n5=dp[i5]*5;
