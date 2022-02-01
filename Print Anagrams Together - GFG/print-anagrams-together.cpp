@@ -13,6 +13,9 @@ class Solution{
     bool checkAnagram(string a, string b){
         map<char,int> mapper;
         int c=0;
+        if(a.length()!=b.length()){
+            return false;
+        }
         for(int i=0;i<a.length();i++){
             mapper[a[i]]++;
             if(mapper[a[i]]==1){
