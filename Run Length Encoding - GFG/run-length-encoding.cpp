@@ -33,13 +33,13 @@ string encode(string src)
       }
       else{
           ans.push_back(c);
-          ans+=to_string(n);
+          ans.push_back(n+'0');
           c=src[i];
           n=1;
       }
   }
     ans.push_back(c);
-    ans+=to_string(n);
+    ans.push_back(n+'0');
     return ans;
   
 }     
