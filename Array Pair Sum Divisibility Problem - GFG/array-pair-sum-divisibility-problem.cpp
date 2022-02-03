@@ -7,7 +7,7 @@ class Solution {
   public:
     bool canPair(vector<int> nums, int k) {
         // Code here.
-        map<int,int> mapper;
+        unordered_map<int,int> mapper;
         if(nums.size()%2!=0){
             return false;
         }
