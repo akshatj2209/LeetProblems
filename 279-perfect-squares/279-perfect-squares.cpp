@@ -4,10 +4,8 @@ public:
         int dp[n+1];
         memset(dp,-1,sizeof(dp));
         int i,j;
-        for(i=0;i<=n;i++){
-            if(i==0){
-                dp[i]=0;
-            }
+        dp[0]=0;
+        for(i=1;i<=n;i++){
             for(j=1;j*j<=i;j++){
                 if(dp[i]==-1){
                     dp[i]=1+dp[i-j*j];
