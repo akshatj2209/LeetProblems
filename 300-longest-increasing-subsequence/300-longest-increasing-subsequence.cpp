@@ -13,7 +13,6 @@ public:
         }
         int ans=0;
         for(i=0;i<n;i++){
-            cout<<dp[i]<<" ";
             ans=max(ans,dp[i]);
         }
         return ans+1;
