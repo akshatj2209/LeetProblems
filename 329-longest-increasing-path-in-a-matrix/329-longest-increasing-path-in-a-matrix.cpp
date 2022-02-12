@@ -20,7 +20,6 @@ public:
         if(j<matrix[0].size()-1 && matrix[i][j+1]>matrix[i][j]){
             down=1+recur(i,j+1,matrix,memo);
         }
-        
         return  memo[i][j]=max(left,max(right,max(up,down)));
     }
     int longestIncreasingPath(vector<vector<int>>& matrix) {
@@ -34,9 +33,7 @@ public:
                 ans=max(ans,recur(i,j, matrix,memo));
             }
         }
-        return ans+1;
-        
-        
+        return ans+1;    
         
     }
 };
