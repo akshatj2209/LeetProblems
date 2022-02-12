@@ -8,12 +8,9 @@ public:
                 j++;
                 nums[j]=nums[i];
             }
-            else{
-                k--;
-            }
             
         }
-        return k;
+        return j+1;
         
     }
 };
