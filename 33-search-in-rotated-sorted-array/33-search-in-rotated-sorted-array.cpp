@@ -8,7 +8,6 @@ public:
         while(start<=end){
             
             int mid=(start+end)/2;
-            cout<<mid<<" ";
             if(nums[mid]==target){
                 return mid;
             }
