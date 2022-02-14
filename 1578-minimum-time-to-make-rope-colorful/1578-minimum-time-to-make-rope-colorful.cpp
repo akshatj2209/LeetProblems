@@ -6,7 +6,7 @@ public:
         for(i=0;i<n-1;i++){
             if(colors[i]==colors[i+1]){
                 int sum=0;
-                int maxi=INT_MIN;
+                int maxi=0;
                 while(i<n && colors[i]==colors[i+1]){
                     maxi=max(maxi,neededTime[i]);
                     sum+=neededTime[i];
