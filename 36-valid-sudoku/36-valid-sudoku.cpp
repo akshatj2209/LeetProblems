@@ -16,7 +16,6 @@ public:
                 
             }
         }
-        cout<<"passed"<<" ";
         for(i=0;i<9;i++){
             map<char,bool> mapper;
             for(j=0;j<9;j++){
@@ -30,7 +29,6 @@ public:
                 
             }
         }
-        cout<<"passed"<<" ";
         int ki=0, kj=0;
         for(ki=0;ki<9;ki+=3){
             for(kj=0;kj<9;kj+=3){
