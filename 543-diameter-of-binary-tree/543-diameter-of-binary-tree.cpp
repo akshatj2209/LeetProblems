@@ -18,12 +18,11 @@ public:
         int lefty=recur(root->left,ans);
         int righty=recur(root->right,ans);
         ans=max(ans, lefty+righty);
-        
         return 1+max(lefty,righty);
     }
     int diameterOfBinaryTree(TreeNode* root) {
         int ans=0;
-        ans=max(ans,recur(root->left,ans)+recur(root->right,ans));
+        int h = recur(root,ans);
         return ans;
     }
 };
