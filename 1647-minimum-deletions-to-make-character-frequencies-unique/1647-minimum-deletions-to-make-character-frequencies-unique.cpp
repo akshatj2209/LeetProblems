@@ -12,7 +12,7 @@ public:
             if(freq[i]==0){
                 break;
             }
-            while(freq[i]>=freq[i-1] && freq[i]!=0){
+            while(freq[i]!=0 && freq[i]>=freq[i-1]){
                 deletions++;
                 freq[i]--;
             }
