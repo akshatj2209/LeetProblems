@@ -21,7 +21,7 @@ public:
         return recur(root->left,value)+recur(root->right,value);
     }
     int goodNodes(TreeNode* root) {
-        return recur(root, -100001);
+        return recur(root, -10001);
         
     }
 };
